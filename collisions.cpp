@@ -35,11 +35,13 @@ int tiles[arrayWidth][arrayHeight] = {
 void ArrayCollision() {
     for (int y = 0; y < arrayHeight; y++) {
         for (int x = 0; x < arrayWidth; x++) {
-                if (tiles[x][y] > 0) { objPlayer.Collision((Vector2){ y * tileSize.x, x * tileSize.y }, tileSize); }
-} } }
-
+            switch (tiles[x][y]) {
+                case 1: { objPlayer.Collision((Vector2){ y * tileSize.x, x * tileSize.y }, tileSize); } break;
+    } } } }
 void DrawColliders() {
-        for (int y = 0; y < arrayHeight; y++) {
-            for (int x = 0; x < arrayWidth; x++) {
-                if (tiles[x][y] > 0) { DrawRectangleLines(y * tileSize.x, x * tileSize.y, tileSize.x, tileSize.y, RED); }
-} } }
+    for (int y = 0; y < arrayHeight; y++) {
+        for (int x = 0; x < arrayWidth; x++) {
+            switch (tiles[x][y]) {
+                case 0: { DrawRectangleLines(y * tileSize.x, x * tileSize.y, tileSize.x, tileSize.y, GREEN); } break;
+                case 1: { DrawRectangleLines(y * tileSize.x, x * tileSize.y, tileSize.x, tileSize.y, RED); } break;
+    } } } }
