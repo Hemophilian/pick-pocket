@@ -1,4 +1,4 @@
-#include "global.hpp"
+#include "../include/global.hpp"
 
 playerState currentState = IDLE;
 

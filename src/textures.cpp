@@ -1,7 +1,5 @@
-#include "global.hpp"
-
-using namespace std;
+#include "../include/global.hpp"
 
 void LoadTextures() {
-    GetFileName("assets/player")
+    GetFileName("assets/player");
 }

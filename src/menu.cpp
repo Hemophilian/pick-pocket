@@ -1,4 +1,4 @@
-#include "global.hpp"
+#include "../include/global.hpp"
 
 devMenu currentDevMenu = PLAYER;
 playerTouching currentFace = NONE;

@@ -1,4 +1,4 @@
-#include "global.hpp"
+#include "../include/global.hpp"
 
 const Vector2 tileSize = (Vector2){16.0f, 16.0f};
 const int arrayWidth = 8;
