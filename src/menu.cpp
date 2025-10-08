@@ -13,7 +13,7 @@ void DrawDevMenu() {
         case PLAYER:
             DrawText("Return", 12, 12, 20, WHITE);
             DrawText(TextFormat("Player Height: %.1f", objPlayer.height), 12, 32, 20, WHITE);
-            switch(currentFace){
-                case NONE: DrawTextureEx(spriteNone, Vector2{880, 16}, 0, 0.5f, WHITE); break;
-            }
+          //  switch(currentFace){
+          //      case NONE: DrawTextureEx(, Vector2{880, 16}, 0, 0.5f, WHITE); break;
+          //   }
 } };

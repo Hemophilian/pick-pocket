@@ -1,30 +1,11 @@
 #include <iostream>
 #include <raylib.h>
 #include <raymath.h>
+#include "enums.hpp"
 
-enum menuOptions { 
-    MAIN_INACTIVE, MAIN_MENU, LEVEL_EDITOR 
-};
-
-enum MenuOptions_LevelEditor {
-    LEVEL_EDITOR_INACTIVE   
-};
-
-enum playerState {
-    // Movement States
-    IDLE, WALK, RUN, JUMP, DASH, DESCEND, FALL,
-    // Action States
-    ATTACK, SCAVENGE,
-    // Interaction States
-    DAMAGED
-};
-
-extern menuOptions currentMenu;
-
-// Functions Section
-    // Menu.cpp Functions
-    void LoadMenu_Main();
-    void LoadMenu_LevelEditor();
+extern devMenu currentDevMenu;
+extern playerTouching currentFace;
+extern FilePathList directoryFiles;
 
 class Player {
     public:
@@ -52,5 +33,11 @@ class Colliders {
 extern Colliders objWall;
 extern Player objPlayer;
 
-void ArrayCollision();
-void DrawColliders();
+// Functions Section
+    // Menu.cpp Functions
+    void DrawDevMenu();
+    // collisions.cpp Functions
+    void ArrayCollision();
+    void DrawColliders();
+    // loader.cpp Functions
+    void LoadGameAssets();

@@ -1,4 +1,4 @@
-#include "global.hpp"
+#include "../include/global.hpp"
 using namespace std;
 
 const int ScreenWidth = 960;
@@ -9,8 +9,8 @@ Camera2D camera;
 
 int main() {
     InitWindow(ScreenWidth, ScreenHeight, "Pick Pocket");
-    LoadTextures();
     SetTargetFPS(60);
+    GenerateAssetArrays();
 
     camera.target = objPlayer.position;
     camera.offset = (Vector2){ScreenWidth/2.0f, ScreenHeight/2.0f };
@@ -25,7 +25,6 @@ int main() {
 
         BeginDrawing();
             ClearBackground(BLACK);
-            DrawDevMenu();
                 BeginMode2D(camera);
                     DrawColliders();
                     objPlayer.DrawSelf();

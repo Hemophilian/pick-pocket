@@ -7,19 +7,19 @@ const int arrayHeight = 8;
 void Player::Collision(Vector2 objPos, Vector2 objSize)
 {
     if (CheckCollisionRecs(Rectangle{position.x, position.y, size.x, size.y}, Rectangle{objPos.x, objPos.y, objSize.x, objSize.y} )) {
-        // Player-Right / Wall-Left
-    if (startPos.x + size.x <= objPos.x) {
-        position.x = objPos.x - size.x; currentFace = RIGHT;
-    }   // Player-Left / Wall-Right
-    if (startPos.x >= objPos.x + objSize.x) {
-        position.x = objPos.x + objSize.x; currentFace = LEFT;
-    }   // Player-Bottom / Wall-Top
-    if (startPos.y + size.y <= objPos.y) {
-        position.y = objPos.y - size.y; currentFace = BOTTOM;
-    }   // Player-Top / Wall-Bottom
-    if (startPos.y >= objPos.y + objSize.y) {
-        position.y = objPos.y + objSize.y; currentFace = TOP;
-    } } }
+            // Player-Right / Wall-Left
+        if (startPos.x + size.x <= objPos.x) {
+            position.x = objPos.x - size.x; currentFace = RIGHT;
+        }   // Player-Left / Wall-Right
+        if (startPos.x >= objPos.x + objSize.x) {
+            position.x = objPos.x + objSize.x; currentFace = LEFT;
+        }   // Player-Bottom / Wall-Top
+        if (startPos.y + size.y <= objPos.y) {
+            position.y = objPos.y - size.y; currentFace = BOTTOM;
+        }   // Player-Top / Wall-Bottom
+        if (startPos.y >= objPos.y + objSize.y) {
+            position.y = objPos.y + objSize.y; currentFace = TOP;
+} } }
 
 int tiles[arrayWidth][arrayHeight] = {
   { 0, 0, 0, 0, 0, 0, 0, 0},

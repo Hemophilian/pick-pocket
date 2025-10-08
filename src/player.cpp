@@ -15,7 +15,7 @@ void Player::Movement() {
     if (IsKeyDown(KEY_D)) { position.x += 1; }
 };
 
-void Player::inputState() {
+void Player::updateState() {
     switch(currentState) {
         // Movement
         case IDLE: break;
@@ -25,11 +25,9 @@ void Player::inputState() {
         case JUMP: break;
         case DESCEND: break;
         case FALL: break;
-
         // Actions
         case ATTACK: break;
         case SCAVENGE: break;
-
         // Interactions
         case DAMAGED: break;
 } };
