@@ -60,5 +60,6 @@
 		"cinttypes": "cpp",
 		"typeinfo": "cpp",
 		"variant": "cpp"
-	}
+	},
+	"editor.fontFamily": "Consolas, 'Courier New', monospace"
 }

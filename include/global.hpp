@@ -1,6 +1,7 @@
-#include <iostream>
 #include <raylib.h>
 #include <raymath.h>
+#include <iostream>
+#include <map>
 #include "enums.hpp"
 
 extern devMenu currentDevMenu;
@@ -12,10 +13,7 @@ class Player {
         Vector2 position = Vector2Zero();
         Vector2 startPos = Vector2Zero();
         Vector2 size = (Vector2) {16.0f, 8.0f};
-        float height = 0;
-        float velocity = 0, gravity = 0.15;
-        void Movement(); // Handles all the Movement (Duh)
-        void DrawSelf(); // Draws the player charater (Duh)
+        float height = 0.0f, velocity = 0.0f, gravity = 0.15f;
         void Collision(Vector2 objPos, Vector2 objSize); // Checks collisions (Duh)
         void updateState();
         void drawState();

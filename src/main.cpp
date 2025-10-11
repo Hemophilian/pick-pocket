@@ -8,9 +8,9 @@ Player objPlayer;
 Camera2D camera;
 
 int main() {
-    InitWindow(ScreenWidth, ScreenHeight, "Pick Pocket");
+    // LoadGameAssets();
     SetTargetFPS(60);
-    GenerateAssetArrays();
+    InitWindow(ScreenWidth, ScreenHeight, "Pick Pocket");
 
     camera.target = objPlayer.position;
     camera.offset = (Vector2){ScreenWidth/2.0f, ScreenHeight/2.0f };
@@ -19,16 +19,16 @@ int main() {
 
     while (!WindowShouldClose())
     {
-            objPlayer.Movement();
+            objPlayer.updateState();
             ArrayCollision();
             camera.target = objPlayer.position;
 
         BeginDrawing();
             ClearBackground(BLACK);
-                BeginMode2D(camera);
-                    DrawColliders();
-                    objPlayer.DrawSelf();
-                EndMode2D();
+            BeginMode2D(camera);
+                DrawColliders();
+                objPlayer.drawState();
+            EndMode2D();
         EndDrawing();
     }
     

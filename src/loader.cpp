@@ -1,10 +1,6 @@
 #include "../include/global.hpp"
-#include <vector>
 
 void LoadGameAssets() {
-    std::vector<Texture2D> pngVector;
-    std::vector<Sound> soundVector;
-
     // Creates a struct containing dirPath links to all sub-folders within assets
     FilePathList assetDirectory = LoadDirectoryFiles("assets");
     // For each sub-folder...
@@ -13,25 +9,24 @@ void LoadGameAssets() {
         FilePathList subFileAssetDirectory = LoadDirectoryFiles(assetDirectory.paths[i] );
         // For each asset within the sub-folders...
         for (unsigned int ii = 0; ii < subFileAssetDirectory.count; ii++) {
-            // If it's a PNG...
-            if (IsFileExtension(GetFileName(subFileAssetDirectory.paths[ii]), .png)) {
-
+            // If it's a PNG File
+            if (IsFileExtension(GetFileName(subFileAssetDirectory.paths[ii]), ".png")) {
+                Image tempImage = LoadImage(subFileAssetDirectory.paths[ii]);
+                Texture2D tempTexture = LoadTextureFromImage(tempImage);
+                // Set the name of the texture asset.
+                // Push texture into Vector to store for later.
+                UnloadImage(tempImage);
             }
-            if (IsFileExtension(GetFileName(subFileAssetDirectory.paths[ii], .wav))) {
-
+            // If it's a WAV File
+            if (IsFileExtension(GetFileName(subFileAssetDirectory.paths[ii]), ".wav")) {
+                Sound tempSound = LoadSound(subFileAssetDirectory.paths[ii]);
+                // Set the name of the sound asset.
+                // Push sound to Vector to store for later.
             }
-        }
-    }
-};
-
-void TestFunction() {
-};
-
-/*
-void VisualizeAssetFolder() {
-    FilePathList assetDirectory = LoadDirectoryFiles("assets"); // 1. Get the path for "../assets"
-    for (unsigned int i = 0; i < assetDirectory.count; i++) {
-        std::cout << assetDirectory.paths[i] << std::endl; 
-    }
-};
-*/
+            // If it's an OGG File
+            if (IsFileExtension(GetFileName(subFileAssetDirectory.paths[ii]), ".ogg")) {
+                Sound tempSound = LoadSound(subFileAssetDirectory.paths[ii]);
+                // Set the name of the sound asset.
+                // Push sound to Vector to store for later.
+            }
+} } };
