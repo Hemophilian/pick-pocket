@@ -15,5 +15,7 @@ enum playerTouching {
     NONE, TOP, BOTTOM, LEFT, RIGHT
 };
 
+
 extern playerTouching currentFace;
 extern devMenu currentDevMenu;
+extern playerState currentState;

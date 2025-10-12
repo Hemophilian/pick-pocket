@@ -10,18 +10,17 @@ class Player {
         Vector2 position = Vector2Zero();
         Vector2 startPos = Vector2Zero();
         Vector2 size = (Vector2) {16.0f, 8.0f};
-        float height = 0.0f, velocity = 0.0f, gravity = 0.15f, speed = 1, speedAmp = 0.0f;
+        float height = 0.0f, velocity = 0.0f, gravity = 0.15f;
         void Collision(Vector2 objPos, Vector2 objSize); // Checks collisions (Duh)
-        void updateState();
-        void drawState();
-        // State Functions
+         // State Functions
         void Positioning();
         void Movement();
         void Gravity();
+        // Overarching Functions
+        void updateState();
+        void drawState();
     private:
 };
-
-extern Player objPlayer;
 
 class Colliders {
     public:
@@ -41,4 +40,4 @@ extern Player objPlayer;
     void ArrayCollision();
     void DrawColliders();
     // loader.cpp Functions
-    void LoadGameAssets();
+    // void LoadGameAssets();

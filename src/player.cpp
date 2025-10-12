@@ -1,5 +1,4 @@
 #include "../include/global.hpp"
-playerState currentState = MOVE;
 
 void Player::Positioning() {
     startPos = position;
@@ -11,21 +10,20 @@ void Player::Gravity() {
     if (height < 0) { height = 0; velocity = 0; }
 }
 void Player::Movement() {
-    if (((IsKeyDown(KEY_SPACE)) && (velocity == 0))) { velocity += 4;}
-    if (IsKeyDown(KEY_LEFT_SHIFT)) { speedAmp = 0.40f; } else { speedAmp = 0.0f; }
-    if (IsKeyDown(KEY_W)) { position.y -= (speed + speedAmp); }
-    if (IsKeyDown(KEY_S)) { position.y += (speed + speedAmp); }
-    if (IsKeyDown(KEY_A)) { position.x -= (speed + speedAmp); }
-    if (IsKeyDown(KEY_D)) { position.x += (speed + speedAmp); }
+    if (((IsKeyDown(KEY_SPACE)) && (velocity == 0))) { velocity += 3;}
+    if (IsKeyDown(KEY_W)) { position.y -= 1; }
+    if (IsKeyDown(KEY_S)) { position.y += 1; }
+    if (IsKeyDown(KEY_A)) { position.x -= 1; }
+    if (IsKeyDown(KEY_D)) { position.x += 1; }
 }
 
 void Player::updateState() {
     switch(currentState) {
         // Movement
-        case IDLE: Gravity(); Movement(); Positioning(); break;
-        case MOVE: Gravity(); Movement(); Positioning(); break;
+        case IDLE: Positioning(); Gravity(); Movement(); break;
+        case MOVE: Positioning(); Gravity(); Movement(); break;
         case DASH: break;
-        case JUMP: Gravity(); Movement(); Positioning(); break;
+        case JUMP: Positioning(); Gravity(); Movement(); break;
         case DESCEND: break;
         case FALL: break;
         // Actions
