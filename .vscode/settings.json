@@ -59,7 +59,9 @@
 		"text_encoding": "cpp",
 		"cinttypes": "cpp",
 		"typeinfo": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"map": "cpp"
 	},
-	"editor.fontFamily": "Consolas, 'Courier New', monospace"
+	"editor.fontFamily": "Consolas, 'Courier New', monospace",
+	"makefile.configureOnOpen": false
 }

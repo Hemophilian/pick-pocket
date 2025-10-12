@@ -19,6 +19,7 @@ void Player::Collision(Vector2 objPos, Vector2 objSize)
         }   // Player-Top / Wall-Bottom
         if (startPos.y >= objPos.y + objSize.y) {
             position.y = objPos.y + objSize.y; currentFace = TOP;
+
 } } }
 
 int tiles[arrayWidth][arrayHeight] = {

@@ -4,7 +4,7 @@ enum devMenu {
 
 enum playerState {
     // Movement States
-    IDLE, WALK, RUN, JUMP, DASH, DESCEND, FALL,
+    IDLE, MOVE, JUMP, DASH, DESCEND, FALL,
     // Action States
     ATTACK, SCAVENGE,
     // Interaction States
@@ -14,3 +14,6 @@ enum playerState {
 enum playerTouching {
     NONE, TOP, BOTTOM, LEFT, RIGHT
 };
+
+extern playerTouching currentFace;
+extern devMenu currentDevMenu;

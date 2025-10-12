@@ -1,5 +1,4 @@
 #include "../include/global.hpp"
-using namespace std;
 
 const int ScreenWidth = 960;
 const int ScreenHeight = 540;
@@ -25,6 +24,7 @@ int main() {
 
         BeginDrawing();
             ClearBackground(BLACK);
+            DrawDevMenu();
             BeginMode2D(camera);
                 DrawColliders();
                 objPlayer.drawState();
